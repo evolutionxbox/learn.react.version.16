@@ -7,7 +7,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <UserOutput />
+        <UserOutput username="evolutionxbox" />
         <UserOutput />
         <UserOutput />
       </div>
