@@ -1,5 +1,5 @@
 import React from 'react';
 
-const UserInput = () => <input type="text" name="UserInput" />
+const UserInput = ({onChange}) => <input type="text" name="UserInput" onChange={onChange} />
 
 export default UserInput;

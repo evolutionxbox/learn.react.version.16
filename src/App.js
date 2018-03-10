@@ -8,9 +8,16 @@ class App extends Component {
     username: "evolutionxbox"
   }
 
+  handleChange(event) {
+    this.setState({
+      username: event.target.value
+    })
+  }
+
   render() {
     return (
       <div className="App">
+        <UserInput onChange={this.handleChange.bind(this)} />
         <UserOutput username={this.state.username} />
         <UserOutput />
         <UserOutput />
