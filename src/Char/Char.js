@@ -8,8 +8,8 @@ const styles = {
   border: '1px solid black'
 }
 
-const Char = ({ letter }) => {
-  return <span style={styles}>{letter}</span>
+const Char = ({ letter, onClick }) => {
+  return <span style={styles} onClick={onClick}>{letter}</span>
 }
 
 export default Char

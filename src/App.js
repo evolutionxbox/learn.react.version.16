@@ -5,24 +5,30 @@ import Char from './Char/Char'
 
 class App extends Component {
   state = {
-    text: ''
+    text: []
   }
 
   handleChange (event) {
     this.setState({
-      text: event.target.value
+      text: event.target.value.split('')
+    })
+  }
+
+  handleClick (index) {
+    const newtext = [...this.state.text];
+    newtext.splice(index, 1);
+    this.setState({
+      text: newtext
     })
   }
 
   render() {
-    const letters = this.state.text.split('');
-
     return (
       <div className="App">
-        <input onChange={this.handleChange.bind(this)} />
+        <input onChange={this.handleChange.bind(this)} value={this.state.text.join('')} />
         <p>{this.state.text.length}</p>
         <Validation length={this.state.text.length} />
-        {letters.map((letter, index) => <Char key={index} letter={letter} />)}
+        {this.state.text.map((letter, index) => <Char key={index} letter={letter} onClick={_ => this.handleClick(index)} />)}
       </div>
     );
   }
