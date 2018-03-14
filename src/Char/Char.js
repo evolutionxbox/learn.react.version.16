@@ -8,8 +8,8 @@ const styles = {
   border: '1px solid black'
 }
 
-const Char = () => {
-  return <span style={styles} />
+const Char = ({ letter }) => {
+  return <span style={styles}>{letter}</span>
 }
 
 export default Char

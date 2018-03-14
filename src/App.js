@@ -15,11 +15,14 @@ class App extends Component {
   }
 
   render() {
+    const letters = this.state.text.split('');
+
     return (
       <div className="App">
         <input onChange={this.handleChange.bind(this)} />
         <p>{this.state.text.length}</p>
         <Validation length={this.state.text.length} />
+        {letters.map((letter, index) => <Char key={index} letter={letter} />)}
       </div>
     );
   }
